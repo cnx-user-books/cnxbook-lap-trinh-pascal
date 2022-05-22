@@ -1,0 +1,228 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>chương trình con</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>997a85fb-6f8f-456e-b818-b7890faa5a41</md:uuid>
+</metadata>
+  <content>
+    <para id="id11884066">CHƯƠNG TRÌNH CON- THỦ TỤC VÀ HÀM</para>
+    <list list-type="enumerated" id="id11090132">
+      <item>Khái niệm về chương trình con:</item>
+    </list>
+    <para id="id9122240">Chương trình con là một chương trình nằm bên trong một chương trình khác. Chương trình con có 2 loại: Thủ tục (Procedure) và hàm (Function):</para>
+    <list list-type="bulleted" id="id12329597">
+      <item>Thủ tục (PROCEDURE): Dùng để thực hiện một hay nhiều nhiệm vụ nào đó.</item>
+      <item>Hàm (FUNCTION): Trả về một giá trị nào đó (có kiểu vô hướng, kiểu string hoặc kiểu con trỏ). Hàm có thể sử dụng trong các biểu thức.</item>
+    </list>
+    <para id="id9168729">Chương trình con được dùng rộng rãi khi xây dựng các chương trình lớn nhằm làm cho chương trình dễ theo dõi, dễ sửa chữa, có thể phân mảnh chương trình cho nhiều người làm. Một đặc điểm nổi bật của chương trình con là nó có tính đệ quy nhờ thế mà nhiều bài toán được giải quyết dễ dàng.</para>
+    <para id="id11001771">CẤU TRÚC CHUNG CỦA MỘT CHƯƠNG TRÌNH CÓ SỬ DỤNG CHƯƠNG TRÌNH CON:</para>
+    <para id="id12042005"> PROGRAM  Tên_chương_trình;</para>
+    <para id="id12043959">USES CRT;</para>
+    <para id="id11531842">CONST  ............;</para>
+    <para id="id11711289">TYPE     ............;</para>
+    <para id="id11002747">VAR       ............;</para>
+    <para id="id11002845"> </para>
+    <para id="id11047618">PROCEDURE  THUTUC[(Các tham số)];</para>
+    <para id="id11582403">[Khai báo Const, Type, Var]</para>
+    <para id="id11531938">BEGIN</para>
+    <para id="id12646999">     ..............</para>
+    <para id="id10827457">END;</para>
+    <para id="id12660292"> FUNCTION  HAM[(Các tham số)]:&lt;Kiểu dữ liệu&gt;;</para>
+    <para id="id12083068">[Khai báo Const, Type, Var]</para>
+    <para id="id10990724">BEGIN</para>
+    <para id="id12068173">     ..............</para>
+    <para id="id10911015">     HAM:=&lt;Giá trị&gt;;</para>
+    <para id="id10686197">END;</para>
+    <para id="id11168148"> </para>
+    <para id="id11987405">BEGIN {Chương trình chính}</para>
+    <para id="id13435922">     ...................</para>
+    <para id="id9832242">     THUTUC[(...)];</para>
+    <para id="id12343611">     ...................</para>
+    <para id="id10832408">     A:= HAM[(...)];</para>
+    <para id="id12080112">     ...................</para>
+    <para id="id11664452">END.</para>
+    <para id="id10852149"> </para>
+    <para id="id10826679">Chú ý: Trong quá trình xây dựng CHƯƠNG TRÌNH CON, khi nào thì nên dùng thủ tục/hàm?</para>
+    <table id="id12050572" summary="">
+      <tgroup cols="2">
+        <colspec colnum="1" colname="c1"/>
+        <colspec colnum="2" colname="c2"/>
+        <tbody>
+          <row>
+            <entry>Dùng hàm</entry>
+            <entry>Dùng thủ tục</entry>
+          </row>
+          <row>
+            <entry>- Kết quả của bài toán trả về 1 giá trị duy nhất (kiểu vô hướng, kiểu string hoặc kiểu con trỏ).- Lời gọi CHƯƠNG TRÌNH CON cần nằm trong các biểu thức tính toán.</entry>
+            <entry>- Kết quả của bài toán không trả về giá trị nào hoặc trả về nhiều giá trị hoặc trả về  kiểu dữ liệu có cấu trúc (Array, Record, File).- Lời gọi CHƯƠNG TRÌNH CON không nằm trong các biểu thức tính toán.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    <para id="id10020853"> ( ví dụ n!, tìm điểm đối xứng)</para>
+    <para id="id13904077">Ví dụ 1.1: Viết CHƯƠNG TRÌNH CON để tính n! = 1.2...n.</para>
+    <para id="id10588893">Function GiaiThua(n:integer):integer;</para>
+    <para id="id12119197">Var P, i:integer;</para>
+    <para id="id6240192">Begin</para>
+    <para id="id11871794">    P:=1;</para>
+    <para id="id12460940">    For i:=1 To n Do P:=P*i;</para>
+    <para id="id11458264">    GiaiThua:=P;</para>
+    <para id="id10020333">End;</para>
+    <para id="id12959010">Ví dụ 1.2: Viết chương trình con để tìm điểm đối xứng của điểm (x,y) qua gốc tọa độ.</para>
+    <para id="id10517168">Procedure DoiXung(x,y:Integer; Var xx,yy:Integer);</para>
+    <para id="id13935686">Begin</para>
+    <para id="id10482912">    xx:=-x;</para>
+    <para id="id12934407">    yy:=-y;</para>
+    <para id="id13906928">End;</para>
+    <para id="id7730065">CHÚ Ý: Trong 2 ví dụ trên:</para>
+    <para id="id14056375">        n, x, y được gọi là tham trị (không có từ khóa var đứng trước) vì sau khi ra khỏi chương trình con giá trị của nó không bị thay đổi.</para>
+    <para id="id12928601">        xx, yy được gọi là tham biến (có từ khóa var đứng trước) vì sau khi ra khỏi chương trình con giá trị của nó bị thay đổi.</para>
+    <list list-type="enumerated" id="id11186409">
+      <item>Tham số trong chương trình con:</item>
+    </list>
+    <para id="id12766730">Các chương trình con có thể không cần tham số mà chỉ có các biến riêng (biến cục bộ). Trong trường hợp cần nhận các giá trị mà chương trình mẹ truyền cho thì chương trình con cần phải có các tham số. </para>
+    <para id="id10972153">Tham số thực là những giá trị lưu trữ trong các biến toàn cục của chương trình mẹ, được truyền cho các thủ tục hoặc hàm thông qua lời gọi tên của chúng.</para>
+    <para id="id11605482">Tham số được khai báo ngay sau tên chương trình con được gọi là tham số hình thức. Tham số hình thức gồm:</para>
+    <list list-type="bulleted" id="id12522146">
+      <item>Tham biến:</item>
+    </list>
+    <para id="id11424346">Tham biến là những giá trị mà chương trình con nhận từ chương trình mẹ, các giá trị này có thể biến đổi trong chương trình con và khi chương trình con kết thúc các giá trị này được trả về cho tham số thực.</para>
+    <para id="id9928945">Cách khai báo tham biến:</para>
+    <para id="id11436820">Tên chương trình con (Var tên tham biến: kiểu dữ liệu);</para>
+    <list list-type="bulleted" id="id13921986">
+      <item>Tham trị:</item>
+    </list>
+    <para id="id14057125">Tham trị là những tham số truyền vào cho chương trình con xử lý nhưng khi quay về chương trình mẹ vẫn phải giữ nguyên giá trị ban đầu.</para>
+    <para id="id11814220">Tên chương trình con (tên tham trị: kiểu dữ liệu);</para>
+    <list list-type="enumerated" id="id11997428">
+      <item>Truyền tham số cho chương trình con:</item>
+    </list>
+    <para id="id3177216">Khi tham số hình thức trong chương trình con là tham biến thì tham số thực trong chương trình mẹ phải là biến chứ không thể là hằng. Trong mọi trường hợp cả hai tham số thực và tham số hình thức đều phải cùng kiểu dữ liệu…(các tham biến khi ra khỏi chương trình con giá trị thay đổi).</para>
+    <para id="id12947037">Khi tham số hình thức là tham trị thì tham số thực phải là một giá trị.</para>
+    <list list-type="enumerated" id="id13911134">
+      <item>Biến toàn cục và biến địa phương:</item>
+    </list>
+    <list list-type="bulleted" id="id14056784">
+      <item>Biến toàn cục: là các biến được khai báo trong chương trình chính. Các biến này có tác dụng ở mọi nơi trong toàn bộ chương trình.</item>
+      <item>Biến địa phương: là các biến được khai báo trong các chương trình con. Các biến này chỉ có tác dụng trong phạm vi chương trình con đó mà thôi.</item>
+    </list>
+    <para id="id11871454">Chú ý: Trong một chương trình con, nếu biến toàn cục trùng tên với biến địa phương thì biến địa phương được ưu tiên hơn.</para>
+    <para id="id13858868"> </para>
+    <para id="id12585929">Ví dụ 1.3:</para>
+    <para id="id10457092">Program  KhaoSatBien;</para>
+    <para id="id12960812">Var a,b: Integer;   {biến toàn cục}</para>
+    <para id="id12996793"> </para>
+    <para id="id10511960">Procedure  ThuBien;</para>
+    <para id="id11352773">Var  a: Integer; {biến địa phương}</para>
+    <para id="id9308544">Begin</para>
+    <para id="id9308547">    a:=10;</para>
+    <para id="id11428712">    Writeln(‘A=’,a,’B=’,b);</para>
+    <para id="id11161842">End;</para>
+    <para id="id11959884">        </para>
+    <para id="id12723530">Begin</para>
+    <para id="id12960665">    a:=50;</para>
+    <para id="id12661576">    b:=200;</para>
+    <para id="id14057053">    ThuBien;                         {A=10  B=200}</para>
+    <para id="id7279743">    Writeln(‘A=’,a,’B=’,b);      {A=50  B=200}</para>
+    <para id="id13906441">End. </para>
+    <list list-type="enumerated" id="id13913348">
+      <item>Tính đệ quy của chương trình con:</item>
+    </list>
+    <para id="id12970276">Thông thường lời gọi một chương trình con chỉ được thực hiện khi chương trình con đó đã được thiết kế hoàn chỉnh. Tuy nhiên, Pascal còn cho phép một chương trình con ngay khi trong quá trình xây dựng lại có thể gọi tới chính nó, tính chất này được gọi là “Đệ quy của chương trình con”. </para>
+    <list list-type="enumerated" id="id14056845">
+      <item>Lời gọi chương trình con:</item>
+    </list>
+    <para id="id12960515">Một chương trình mẹ có nhiều chương trình con trực thuộc, bên trong mỗi chương trình con lại có thể có các chương trình con riêng. Khi thiết kế, mỗi chương trình con phải là một khối riêng biệt hoặc có thể có các lệnh nhảy Goto từ chương trình con này tới chương trình con khác.</para>
+    <list list-type="bulleted" id="id7428504">
+      <item>Gọi chương trình con từ trong chương trình mẹ:</item>
+    </list>
+    <para id="id12935352">Lời gọi chương trình con có thể đặt bất kỳ chỗ nào trong chương trình mẹ. Nếu chương trình con là một thủ tục thì lời gọi chương trình con có thể tạo nên một câu lệnh, ví dụ:</para>
+    <para id="id12624982">Readln;</para>
+    <para id="id12752339">Nếu chương trình con là hàm thì tên hàm không thể tạo nên một câu lệnh, vì vậy tên hàm phải nằm trong một biểu thức hay trong một thủ tục nào đó. Ví dụ, ta không thể viết:</para>
+    <para id="id11662580">Sqrt(9);</para>
+    <para id="id11662584">gọi hàm như sau là hợp lệ: a:=sqrt(9)+5;</para>
+    <list list-type="bulleted" id="id10747009">
+      <item>Gọi chương trình con từ chương trình con khác:</item>
+    </list>
+    <para id="id14064293">Các chương trình con cùng cấp có thể gọi tới nhau và truyền tham số cho nhau. Nguyên tắc gọi là: những chương trình con xây dựng sau có thể gọi tới các chương trình con đã xây dựng trước nó, đồng thời các chương trình con cấp dưới cũng có thể gọi tới các chương trình con cấp trên nếu chúng cùng một gốc. Các chương trình con xây dựng trước muốn gọi tới các chương trình con xây dựng sau thì phải có chỉ báo forward.</para>
+    <para id="id13993131">Xét một số ví dụ sau:</para>
+    <para id="id9308568">Ví dụ 1.4 </para>
+    <para id="id12155992">Program Goi_CTC;</para>
+    <para id="id10464095">Type dayso=array[1..60] of byte; S1:=string[30];</para>
+    <para id="id10828726">Var</para>
+    <para id="id13418383">a:s1; b:dayso; i,j,n:byte;</para>
+    <para id="id9277509">Procedure nhapso(m:byte; var c:dayso);</para>
+    <para id="id10145208">Begin</para>
+    <para id="id11803175"> For i:=1 to m do</para>
+    <para id="id11928970"> begin</para>
+    <para id="id10747682">  Write(‘c[‘,i.’]=’); readln(c[i]);</para>
+    <para id="id9025721"> End;</para>
+    <para id="id13937585">End;</para>
+    <para id="id12648429">Function tinhtong(m:byte; var d:dayso):real;</para>
+    <para id="id12214868">Var tong:real;</para>
+    <para id="id11424750">Begin </para>
+    <para id="id9928892">tong:=0;</para>
+    <para id="id9928896">For i:=1 to m do tong:=tong+d[i];</para>
+    <para id="id11114199">Tinhtong:=tong;</para>
+    <para id="id14070042"> End;</para>
+    <para id="id11644590"> Procedure Inkq(k:byte; e: dayso);</para>
+    <para id="id11746295"> Begin </para>
+    <para id="id12751484">  Write(‘tong cac ptu =’,tinhtong(k,e):8:0); {chương trình con gọi một chương trình con cùng cấp}</para>
+    <para id="id13867020">  Readln;</para>
+    <para id="id12555997"> End;</para>
+    <para id="id12021234"> BEGIN</para>
+    <para id="id10867521">  Write(‘nhap so ptu n’); readln(n);</para>
+    <para id="id13892184">  Nhapso(n,b);</para>
+    <para id="id11300367">  Inkq(n,b);</para>
+    <para id="id11434294"> End.</para>
+    <para id="id13861926">Nếu hàm tinhtong xây dựng sau thủ tục Inkq, thì phải có chỉ báo forward.</para>
+    <para id="id11127897">Thêm dòng: Function tinhtong(m:byte; var d:dayso):real; forward; trước khi xây dựng các chương trình con.</para>
+    <para id="id10899197">Ví dụ 1.5 </para>
+    <para id="id12685093">Program Goi_CTC;</para>
+    <para id="id13878351">Type dayso=array[1..60] of byte; S1:=string[30];</para>
+    <para id="id9988691">Var</para>
+    <para id="id12372297">a:s1; b:dayso; i,j,n:byte;</para>
+    <para id="id10932522">Procedure nhapso(m:byte; var c:dayso);</para>
+    <para id="id11460001">Begin</para>
+    <para id="id12452567"> …</para>
+    <para id="id12963550">End;</para>
+    <para id="id10119318">Function tinhtong(m:byte; var d:dayso):real;</para>
+    <para id="id13870600">Var tong:real;</para>
+    <para id="id11424155">Begin </para>
+    <para id="id10834610">…</para>
+    <para id="id10834615"> End;</para>
+    <para id="id13919364"> Procedure xuly(j:byte;ds:dayso);</para>
+    <para id="id9650024">  Procedure Inkq(k:byte;e:dayso);</para>
+    <para id="id10205940">  Var i:byte;</para>
+    <para id="id9928814">  Begin</para>
+    <para id="id9930528">   Writeln(‘tong cac phan tu mang=’,tinhtong(k,e):8:0;</para>
+    <para id="id12573435">   Writeln (‘day so sap xep giam dan’);</para>
+    <para id="id9629927">   For i:=1 to k do write(e[i],’ ‘);</para>
+    <para id="id9006423">   Readln;</para>
+    <para id="id11624177">  End; {ket thuc thu tuc Inkq}</para>
+    <para id="id9046723"> Procedure sapxep(m:byte;ds:dayso);</para>
+    <para id="id11676440"> Var p,q:byte; tg:byte;</para>
+    <para id="id10637431"> Begin</para>
+    <para id="id13900421">  For p:=1 to m-1 do</para>
+    <para id="id11663956">   For q:=p+1 to m do</para>
+    <para id="id10991209">    If(d[p]&lt;d[q] then</para>
+    <para id="id11341806">    Begin</para>
+    <para id="id11817549">     Tg:=d[p];</para>
+    <para id="id9421781">     d[p]:=d[q];</para>
+    <para id="id11534377">     d[q]:=tg;</para>
+    <para id="id11896188">    end;</para>
+    <para id="id9368316">    inkq(m,d); {goi den chuong trinh con cùng cấp}</para>
+    <para id="id12768275"> end; {ket thuc thu tuc sap xep}</para>
+    <para id="id13906348"> Begin {than thu tuc Xuly}</para>
+    <para id="id13992484">  Write(‘thu tuc xu ly dung de sap xep va in ket qua}</para>
+    <para id="id6298228">  Sapxep(j,ds);</para>
+    <para id="id10290385"> End;</para>
+    <para id="id11357988">BEGIN</para>
+    <para id="id9961971"> Write(‘nhap so phan tu’); readln(n);</para>
+    <para id="id11576677"> Nhapso(n,b);</para>
+    <para id="id12697834"> Xuly(n,b);</para>
+    <para id="id6925616">END.</para>
+    <para id="id12970209">Bài tập:</para>
+    <para id="id12207735">Tính 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:msubsup><m:mi>C</m:mi><m:mstyle fontsize="8pt"><m:mrow><m:mi>n</m:mi></m:mrow></m:mstyle><m:mstyle fontsize="8pt"><m:mrow><m:mi>k</m:mi></m:mrow></m:mstyle></m:msubsup><m:mo stretchy="false">=</m:mo><m:mfrac><m:mrow><m:mi>n</m:mi><m:mi>!</m:mi></m:mrow><m:mrow><m:mi>k</m:mi><m:mi>!</m:mi><m:mo stretchy="false">(</m:mo><m:mrow><m:mi>n</m:mi><m:mo stretchy="false">−</m:mo><m:mi>k</m:mi></m:mrow><m:mo stretchy="false">)</m:mo><m:mi>!</m:mi></m:mrow></m:mfrac></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{C rSub { size 8{n} }  rSup { size 8{k} } = {  {n!}  over  {k! \( n - k \) !} } } {}</m:annotation></m:semantics></m:math></para>
+    <para id="id12964884"> (có sử dụng chương trình con) </para>
+  </content>
+</document>

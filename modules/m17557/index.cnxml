@@ -1,0 +1,124 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Các thành phần cơ bản trong Pascal</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>03a6703c-d045-48c4-9365-5b7510e2eda0</md:uuid>
+</metadata>
+  <content>
+    <para id="id2854575">CÁC THÀNH PHẦN CƠ BẢN CỦA </para>
+    <para id="id11435502">NGÔN NGỮ LẬP TRÌNH PASCAL</para>
+    <para id="id7183938"> </para>
+    <para id="id11595563"> </para>
+    <para id="id10994847">     Pascal là một ngôn ngữ lập trình bậc cao do Niklaus Wirth, giáo sư điện toán trường Đại học kỹ thuật Zurich (Thụy Sĩ) đề xuất năm 1970. Ông lấy tên Pascal để kỷ niệm nhà toán học và nhà triết học người Pháp nổi tiếng Blaise Pascal.</para>
+    <para id="id3027947"> </para>
+    <para id="id11148156">1. Các tập tin cần thiết khi lập trình với Turbo Pascal</para>
+    <para id="id6179623">     Để lập trình được với Turbo Pascal, tối thiểu cần 2 file sau:</para>
+    <para id="id6385819">        TURBO.EXE: Dùng để soạn thảo và dịch chương trình.</para>
+    <para id="id8078828">        TURBO.TPL: Thư viện chứa các đơn vị chuẩn để chạy với TURBO.EXE.</para>
+    <para id="id6316323">     Ngoài ra, muốn lập trình đồ hoạ thì phải cần thêm các tập tin:</para>
+    <para id="id5669972">        GRAPH.TPU: Thư viện đồ hoạ.</para>
+    <para id="id2695797">        *.BGI: Các file điều khiển các loại màn hình tương ứng khi dùng đồ hoạ.</para>
+    <para id="id6542884">        *.CHR: Các file chứa các font chữ đồ họa.</para>
+    <para id="id8245455"> </para>
+    <para id="id8209185">2. Các bước cơ bản khi lập một chương trình Pascal</para>
+    <para id="id6258629">     Bước 1: Soạn thảo chương trình.</para>
+    <para id="id5581351">     Bước 2: Dịch chương trình (nhấn phím F9), nếu có lỗi thì phải sửa lỗi.</para>
+    <para id="id6618927">     Bước 3: Chạy chương trình (nhấn phím Ctrl-F9).</para>
+    <para id="id7125958"> </para>
+    <para id="id6351878">3. Cấu trúc chung của một chương trình Pascal</para>
+    <para id="id8751145">          { Phần tiêu đề }</para>
+    <para id="id5685193">          PROGRAM  Tên_chương_trình;</para>
+    <para id="id9015142">          { Phần khai báo }</para>
+    <para id="id7145650">          USES     ......;</para>
+    <para id="id6789042">          CONST  .....;</para>
+    <para id="id9509925">          TYPE     .......;</para>
+    <para id="id6470246">          VAR       ........;</para>
+    <para id="id10523291">          PROCEDURE  ............;</para>
+    <para id="id10817044">          FUNCTION ..............;</para>
+    <para id="id2648453">          ...............</para>
+    <para id="id11047418">          { Phần thân chương trình }</para>
+    <para id="id8252892">          BEGIN</para>
+    <para id="id8327719">               ...........</para>
+    <para id="id8097348">          END.</para>
+    <para id="id8238392"> </para>
+    <para id="id10703016">Ví dụ 1: Chương trình Pascal đơn giản nhất</para>
+    <para id="id8573686">     Program  Vidu1;</para>
+    <para id="id7765756">    BEGIN</para>
+    <para id="id7520996">        Write(‘Hello World!’);</para>
+    <para id="id9468728">    END.</para>
+    <para id="id9212644"> </para>
+    <para id="id11048635">Ví dụ 2:</para>
+    <para id="id7742202">     Program  Vidu2;</para>
+    <para id="id6070001">    Const  PI=3.14;</para>
+    <para id="id10266013">    Var  R,S:Real;</para>
+    <para id="id6198554">    Begin</para>
+    <para id="id2851646">        R:=10;         {Bán kính đường tròn}</para>
+    <para id="id8131158">        S:=R*R*PI; {Diện tích hình tròn}</para>
+    <para id="id6178696">        Writeln(‘Dien tich hinh tron = ‘, S:0:2);  { In ra màn hình }</para>
+    <para id="id8391709">        Readln;</para>
+    <para id="id9215007">    End.</para>
+    <para id="id8379552"> </para>
+    <para id="id7898499">4. Một số phím chức năng thường dùng</para>
+    <para id="id8379854">        F2:          Lưu chương trình đang soạn thảo vào đĩa.</para>
+    <para id="id7138073">        F3:          Mở file mới hoặc file đã tồn tại trên đĩa để soạn thảo.</para>
+    <para id="id8153745">        Alt-F3:   Đóng file đang soạn thảo.</para>
+    <para id="id8708521">        Alt-F5:   Xem kết quả chạy chương trình.</para>
+    <para id="id5666299">        F8:          Chạy từng câu lệnh một trong chương trình.</para>
+    <para id="id8759109">        Alt-X:          Thoát khỏi Turbo Pascal.</para>
+    <para id="id9549729">        Alt-&lt;Số thứ tự của file đang mở&gt;: Dịch chuyển qua lại giữa các file đang mở.</para>
+    <para id="id2984476">        F10:        Vào hệ thống Menu của Pascal.</para>
+    <para id="id6579310">5. Các thành phần cơ bản của ngôn ngữ Pascal</para>
+    <para id="id8074689">5.1. Từ khóa</para>
+    <para id="id9556752">     Từ khoá là các từ mà Pascal dành riêng để phục vụ cho mục đích của nó. (Chẳng hạn như: BEGIN, END, IF, WHILE,...)</para>
+    <para id="id7812729">     Chú ý: Với Turbo Pascal 7.0 trở lên, các từ khoá trong chương trình sẽ được hiển thị khác màu với các từ khác.</para>
+    <para id="id8760496"> </para>
+    <para id="id8255476">5.2. Tên (định danh)</para>
+    <para id="id10062675">     Định danh là một dãy ký tự dùng để đặt tên cho các hằng, biến, kiểu, tên chương trình con... Khi đặt tên, ta phải chú ý một số điểm sau:</para>
+    <para id="id5711310">        Không được đặt trùng tên với từ khoá</para>
+    <para id="id8090275">        Ký tự đầu tiên của tên không được bắt đầu bởi các ký tự đặc biệt hoặc chữ số.</para>
+    <para id="id5705177">        Không được đặt tên với ký tự space,các phép toán.</para>
+    <para id="id2620338">Ví dụ: Các tên viết như sau là sai</para>
+    <para id="id5108890">     1XYZ             Sai vì bắt đầu bằng chữ số.</para>
+    <para id="id7175531">     #LONG     Sai vì bắt đầu bằng ký tự đặc biệt.</para>
+    <para id="id10982764">     FOR                Sai vì trùng với từ khoá.</para>
+    <para id="id8928265">     KY  TU           Sai vì có khoảng trắng (space).</para>
+    <para id="id10522639">     LAP-TRINH  Sai vì dấu trừ (-) là phép toán.</para>
+    <para id="id7164071"> </para>
+    <para id="id7446096">5.3. Dấu chấm phẩy (;)</para>
+    <para id="id10402937">     Dấu chấm phẩy được dùng để ngăn cách giữa các câu lệnh. Không nên hiểu dấu chấm phẩy là dấu kết thúc câu lệnh.</para>
+    <para id="id8074632">Ví dụ:</para>
+    <para id="id7157990">          FOR i:=1 TO 10 DO Write(i);</para>
+    <para id="id8986209">     Trong câu lệnh trên, lệnh Write(i) được thực hiện 10 lần. Nếu hiểu dấu chấm phẩy là kết thúc câu lệnh thì lệnh Write(i) chỉ thực hiện 1 lần.</para>
+    <para id="id9686027"> </para>
+    <para id="id7753039">5.4. Lời giải thích</para>
+    <para id="id7743563">     Các lời bàn luận, lời chú thích có thể đưa vào bất kỳ chỗ nào trong chương trình để cho người đọc dể hiểu mà không làm ảnh hưởng đến các phần khác trong chương trình. Lời giải thích được đặt giữa hai dấu ngoặc { và } hoặc giữa cụm dấu (* và *).</para>
+    <para id="id8427162">Ví dụ:</para>
+    <para id="id6827501">     Var a,b,c:Real; {Khai báo biến}</para>
+    <para id="id5622576">     Delta := b*b – 4*a*c; (* Tính delta để giải phương trình bậc 2 *)</para>
+    <para id="id7244554">BÀI TẬP THỰC HÀNH</para>
+    <para id="id11029085"> </para>
+    <para id="id7984221">1. Khởi động Turbo Pascal.</para>
+    <para id="id10678405">2. Nhập vào đoạn chương trình sau:</para>
+    <para id="id10026484">    Uses Crt;</para>
+    <para id="id7533650">    Begin</para>
+    <para id="id11002106">        Writeln(‘***********************************************************’);</para>
+    <para id="id6387360">        Writeln(‘*  CHUONG TRINH PASCAL DAU TIEN CUA TOI  *’);</para>
+    <para id="id6986143">        Writeln(‘***********************************************************’);</para>
+    <para id="id10402146">        Readln;</para>
+    <para id="id4141875">    End.</para>
+    <para id="id6292112">3. Dịch và chạy chương trình trên.</para>
+    <para id="id7160079">4. Lưu chương trình vào đĩa với tên BAI1.PAS.</para>
+    <para id="id9961126">5. Thoát khỏi Pascal.</para>
+    <para id="id6267244">6. Khởi động lại Turbo Pascal.</para>
+    <para id="id9096010">7. Mở file BAI1.PAS.</para>
+    <para id="id8413836">8. Chèn thêm vào dòng: CLRSCR; vào sau dòng BEGIN</para>
+    <para id="id6391900">9. Dịch và chạy thử chương trình.</para>
+    <para id="id11179738">10. Lưu chương trình vào đĩa.</para>
+    <para id="id6404196">11. Viết chương trình in ra màn hình:</para>
+    <para id="id9176471">                 *                          </para>
+    <para id="id8440700">               ***                            </para>
+    <para id="id8234458">             **  **                       </para>
+    <para id="id3105993">           **      **                     </para>
+    <para id="id5315008">         *********                   </para>
+    <para id="id8178038">       **              **                 </para>
+    <para id="id6527750">     **                  **   </para>
+  </content>
+</document>

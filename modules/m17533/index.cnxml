@@ -1,0 +1,272 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Dữ liệu kiểu tệp</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>66b9dfab-8999-4d8c-b572-8c0b9f665f9d</md:uuid>
+</metadata>
+  <content>
+    <para id="id10446526">KIỂU DỮ LIỆU TỆP</para>
+    <para id="id10446532">1 Khái niệm về tệp:</para>
+    <para id="id10446540">Tệp là một dãy các phần tử cùng kiểu được sắp xếp một cách tuần tự. Tệp dữ liệu được lưu trữ ở bộ nhớ ngoài dưới một tên nào đó. </para>
+    <para id="id10446554">Tệp tập hợp trong nó một số phần tử dữ liệu có cùng cấu trúc giống như mảng nhưng khác mảng là số phần tử của tệp chưa được xác định.</para>
+    <para id="id10446564">Trong Pascal có 3 loại tệp được sử dụng là:</para>
+    <list list-type="enumerated" id="id10446570">
+      <item>Tệp có kiểu:</item>
+    </list>
+    <para id="id9259626">Tệp có kiểu là tệp mà các phần tử của nó có cùng độ dài và cùng kiểu dữ liệu.</para>
+    <list list-type="enumerated" id="id9259634">
+      <item>Tệp văn bản:</item>
+    </list>
+    <para id="id9259646">Dùng để lưu trữ dữ liệu dưới dạng các ký tự của bảng mã ASCII, các ký tự này được lưu thành từng dòng, độ dài các dòng có thể khác nhau. Ví dụ 2008 (kiểu word) khi ghi vào tệp văn bản cần 4 Byte ( không phải 2 Byte).</para>
+    <list list-type="enumerated" id="id9259662">
+      <item>Tệp không kiểu:</item>
+    </list>
+    <para id="id9259674">Tệp không kiểu là một loại tệp không cần quan tâm đến kiểu dữ liệu ghi trên tệp. Dữ liệu ghi vào tệp không cần chuyển đổi.</para>
+    <para id="id9259684"> Tác dụng lớn nhất của kiểu dữ liệu tệp là ta có thể lưu trữ các dữ liệu nhập vào từ bàn phím và các kết quả xử lý trong bộ nhớ RAM ra tệp để dùng nhiều lần. </para>
+    <list list-type="enumerated" id="id9259699">
+      <item>Khai báo:</item>
+    </list>
+    <list list-type="bulleted" id="id9259711">
+      <item>Định nghĩa kiểu tệp với từ khóa FILE OF trong phần mô tả kiểu sau từ TYPE, tiếp theo là khai báo biến tệp trong phần khai báo biến.</item>
+    </list>
+    <para id="id9259735">Ví dụ 2.6:</para>
+    <para id="id9259743">Type </para>
+    <para id="id9259747">MSN=Array[1..100] of integer; {định nghĩa mảng 100 số nguyên}</para>
+    <para id="id9259754">TSN= File of MSN; {định nghĩa tệp TSN có các phần tử là mảng số nguyên}</para>
+    <para id="id9259766">TCV=File of String[80]; {định nghĩa tệp TCV có các phần tử là các chuỗi có độ dài 80 ký tự.</para>
+    <para id="id9259777">Bangdiem= Record</para>
+    <para id="id9259781">……</para>
+    <para id="id9259785">End;</para>
+    <para id="id9259790">TBD= File of Bangdiem;</para>
+    <para id="id9362442">Var:</para>
+    <para id="id9362446">Tep1: TSN;</para>
+    <para id="id9362450">Tep2: TCV;</para>
+    <para id="id9362454">Tep3: TBD;</para>
+    <list list-type="bulleted" id="id9362459">
+      <item>Định nghĩa trực tiếp biến kiểu tệp trong phần khai báo biến</item>
+    </list>
+    <para id="id9362469">Var</para>
+    <para id="id9362473">Tep4:File of Array[1..5] of String[80];</para>
+    <para id="id9362480">Tep5: File of Bangdiem;</para>
+    <list list-type="enumerated" id="id9362487">
+      <item>Truy nhập vào tệp:</item>
+    </list>
+    <para id="id9362498">Turbo Pascal có thể xử lý 2 loại tệp là : Tệp truy nhập tuần tự và tệp truy nhập trực tiếp.</para>
+    <list list-type="bulleted" id="id9362507">
+      <item>Tệp truy nhập tuần tự: để truy nhập vào một phần tử nào đó, ta bắt buộc phải đi qua các phần tử trước đó. Nếu muốn thêm các phần tử vào tệp thì có thể thêm vào cuối tệp.</item>
+      <item>Tệp truy nhập trực tiếp: là tệp có thể truy nhập vào phần tử bất kỳ trong tệp. Muốn truy nhập trực tiếp phải dùng thủ tục Seek (số hiệu phần tử).</item>
+      <item>Mở tệp:</item>
+    </list>
+    <para id="id9362546">Để mở một tệp chuẩn bị lưu trữ dữ liệu, ta sử dụng 2 thủ tục chuẩn sau đây:</para>
+    <para id="id9362552">ASSIGN(biến tệp, tên tệp);</para>
+    <para id="id9362558">REWRITE(biến tệp);</para>
+    <para id="id9362563">Trong đó:</para>
+    <para id="id9362567">Biến tệp: là tên biến tệp đã khai báo sau từ khóa VAR</para>
+    <para id="id9362574">Tên tệp: Là tên do ta chọn để ghi dữ liệu vào đĩa.</para>
+    <para id="id9362580">Ví dụ : ASSIGN(f, ‘a:\baitap.txt’);</para>
+    <para id="id9362589">REWRITE(f); {khởi tạo tệp rỗng}</para>
+    <para id="id9362598">Sau 2 thủ tục trên, để tiến hành ghi dữ liệu vào tệp ta lại dùng thủ tục WRITE(…):</para>
+    <para id="id9362606">Cách viết:</para>
+    <para id="id9362610">WRITE(biến tệp, các giá trị cần ghi vào tệp);</para>
+    <para id="id9362617">Cuối cùng, ta phải đóng tệp bằng thủ tục:</para>
+    <para id="id9362623">CLOSE(biến tệp); </para>
+    <para id="id9362628">2 Tệp văn bản:</para>
+    <para id="id9362633"> a. Khai báo tệp văn bản:</para>
+    <para id="id9500335"> Tệp văn bản được khai báo trực tiếp trong phần khai báo biến:</para>
+    <para id="id9500343"> Var</para>
+    <para id="id9500348"> Bientep:Text;</para>
+    <para id="id9500353"> b. Truy nhập vào tệp:</para>
+    <para id="id9500359"> Truy nhập vào tệp được hiểu là nhập dữ liệu vào tệp, ghi lại dữ liệu trên thiết bị nhớ ngoài, đọc dữ liệu đó ra màn hình hoặc máy in và xử lý nó.</para>
+    <list list-type="bulleted" id="id9500374">
+      <item>Mở tệp mới để ghi:</item>
+    </list>
+    <para id="id9500387"> Assign(bientep, tentep);</para>
+    <para id="id9500395">Rewrite(bientep);</para>
+    <list list-type="bulleted" id="id9500402">
+      <item>Mở tệp đã có để ghi thêm:</item>
+    </list>
+    <para id="id9500412"> Assign(bientep, tentep);</para>
+    <para id="id9500421">Append(bientep);</para>
+    <list list-type="bulleted" id="id9500428">
+      <item>Mở tệp để đọc dữ liệu:</item>
+    </list>
+    <para id="id9500438"> Assign(bientep, tentep);</para>
+    <para id="id9500446">Reset(bientep);</para>
+    <para id="id9500453">c. Ghi dữ liệu vào tệp:</para>
+    <para id="id9500458">Sau khi đã mở tệp chúng ta có thể dùng thủ tục Write hoặc Writeln để ghi dữ liệu vào tệp.</para>
+    <para id="id9500467">Ví dụ 2.7:</para>
+    <para id="id9500471">Var</para>
+    <para id="id9500475">T1:Text;</para>
+    <para id="id9500480">Begin</para>
+    <para id="id9500484">Assign(T1,’Dulieu.dat’);</para>
+    <para id="id9500489">Rewrite(T1);</para>
+    <para id="id9500494">Writeln(T1,’Tep van ban’);</para>
+    <para id="id9500499">Write(T1,123);</para>
+    <para id="id9500503">Write(T1,’ ’,123.45);</para>
+    <para id="id9500511">Writeln(T1);</para>
+    <para id="id9500518">Close(T1);</para>
+    <para id="id9500523">End.</para>
+    <para id="id9500527">Dữ liệu ghi vào tệp như sau:</para>
+    <para id="id9500533">Tep van ban</para>
+    <para id="id9500537">123 1.234500000E+02</para>
+    <para id="id9500544">Dòng trống</para>
+    <para id="id9500549">d. Đọc dữ liệu từ tệp văn bản:</para>
+    <para id="id9500555">Sau khi tiến hành mở tệp, con trỏ tệp sẽ được đặt tại dòng đầu.Ta dùng thủ tục Read hoặc Readln để đọc dữ liệu từ dòng hiện thời và gán vào biến tương ứng, viết biến đó ra màn hình hoặc máy in.</para>
+    <para id="id9500562">Để có thể viết toàn bộ dữ liệu từ một tệp văn bản ra các thiết bị ngoài thì, thì các lệnh đọc viết phải được lặp đi lặp lại từ dòng 1 đến dòng cuối cùng, nghĩa là phải sử dụng một trong 2 vòng lặp:</para>
+    <para id="id9898273">While not eof(Bientep) do</para>
+    <para id="id9898277">Begin</para>
+    <para id="id9898281"> Readln(Bientep, Dong); {biến Dong phải được khai báo trước, kiểu String}</para>
+    <para id="id9898294"> Write(Dong);</para>
+    <para id="id9898299">End;</para>
+    <para id="id9898303">Hoặc:</para>
+    <para id="id9898307">For i:=1 to filesize(Bientep) do</para>
+    <para id="id9898312"> Begin</para>
+    <para id="id9898317">  Readln(Bientep,Dong);</para>
+    <para id="id9898323">  Write(Dong);</para>
+    <para id="id9898330"> End;</para>
+    <para id="id9898335">Lưu ý: Muốn lấy lại kiểu của dữ liệu nhập vào tệp văn bản thì mỗi biến phải nhập trên một dòng.</para>
+    <para id="id9898344">Ví dụ 2.8:</para>
+    <para id="id9898351">Xây dựng một chương trình đơn giản để quản lý công chức. Dữ liệu nhập bao gồm: Họ tên, Hệ số lương và số con. Dữ liệu xuất ra màn hình bao gồm Họ tên, Hệ số lương, Số con và Lương tháng ( tính theo quy định của nhà nước = heso*540000). </para>
+    <para id="id9898369">Chương trình đặt ra hai khả năng lựa chọn:</para>
+    <list list-type="enumerated" id="id9898375">
+      <item>Nếu tệp dữ liệu đã tồn tại thì nhập thêm người</item>
+      <item>Nếu tệp chưa có thì mở tệp mới</item>
+    </list>
+    <para id="id9898393">Trong cả 2 trường hợp đều cho biết số người cần nhập. Dữ liệu in ra dưới dạng bảng.</para>
+    <para id="id9898404">Program Quan_ly_can_bo;</para>
+    <para id="id9898408">Uses Crt;</para>
+    <para id="id9898412">Var f:Text; hoten:String[20]; c1, heso:real; c2,i,n,socon:byte;</para>
+    <para id="id9898418"> Ten:string[12];</para>
+    <para id="id9898423">Begin</para>
+    <para id="id9898427">Clrscr;</para>
+    <para id="id9898432">Write(‘cho biet ten tep’); readln(ten);</para>
+    <para id="id9898440">Assign(f,ten);</para>
+    <para id="id9898445">Reset(f);</para>
+    <para id="id9898449">If IOResult=0 then</para>
+    <para id="id9898453"> Append(f);</para>
+    <para id="id9898459">Else</para>
+    <para id="id9898463">Rewrite(f);</para>
+    <para id="id9898467">Write(‘nhap bao nhieu nguoi’); readln(n);</para>
+    <para id="id9898473">For i:=1 to n do</para>
+    <para id="id9898477">Begin</para>
+    <para id="id9898482">Write(‘Hoten’); Readln(hoten);</para>
+    <para id="id9898487">Write(‘He so’); Readln(heso);</para>
+    <para id="id9898492">Write(‘So con’); Readln(socon);</para>
+    <para id="id9898498">Writeln(f,hoten);</para>
+    <para id="id9898502">Writeln(f,heso:4:2);</para>
+    <para id="id9499418">Writeln(f,socon);</para>
+    <para id="id9499422">End;</para>
+    <para id="id9499426">Close(f);</para>
+    <para id="id9499430">Assign(f,ten);</para>
+    <para id="id9499434">Reset(f);</para>
+    <para id="id9499439">Writeln(‘------------------------------------------------------‘);</para>
+    <para id="id9499445">Writeln (‘| Ho va ten | Hs | socon | Luong |’);</para>
+    <para id="id9499470">Writeln(‘------------------------------------------------------‘) </para>
+    <para id="id9499479">While not eof(f) do</para>
+    <para id="id9499483">Begin</para>
+    <para id="id9499488">Readln(f,hoten);</para>
+    <para id="id9499495">Readln(f,heso);</para>
+    <para id="id9499499">Readln(f,socon);</para>
+    <para id="id9499503">Writeln(‘|’, hoten:19,’|’,heso:4:2,’|’,socon:4,’|’,heso*540000:10:2,’|’);</para>
+    <para id="id9499511">End;</para>
+    <para id="id9499515">Readln;</para>
+    <para id="id9499519">End.</para>
+    <para id="id9499524">3 Tệp có kiểu:</para>
+    <para id="id9499529"> a. Đọc và ghi :</para>
+    <para id="id9499535"> - Ghi lên tệp:</para>
+    <para id="id9499541"> Write(bientep,bien1,bien2,…);</para>
+    <para id="id9499547"> bien1,bien2,…là các biến cùng kiểu với biến tệp.</para>
+    <para id="id9499554"> - Đọc tệp:</para>
+    <para id="id9499560"> Read(bientep,bien1,bien2,…);</para>
+    <para id="id9499567"> Chú ý: </para>
+    <para id="id9499572"> Khác với tệp văn bản, việc ghi và đọc tệp có kiểu không sử dụng các lệnh Writeln hoặc readln nghĩa là tệp có kiểu không ghi dữ liệu thành các dòng. Các phần tử của tệp có kiểu được ghi liên tục trong các ô nhớ và chỉ có ký hiệu kết thúc tệp EOF.</para>
+    <para id="id9499591"> Khi chúng ta đọc hoặc ghi xong một phần tử thì con trỏ tệp sẽ tự động chuyển đến vị trí kế tiếp.</para>
+    <list list-type="enumerated" id="id9499601">
+      <item>Truy nhập vào tệp:</item>
+    </list>
+    <para id="id9499610">Seek(bientep,i); i=0,1,2,…</para>
+    <para id="id9499616">Thủ tục seek sẽ định vị con trỏ tại vị trí thứ i của tệp.</para>
+    <list list-type="enumerated" id="id9499622">
+      <item>các hàm xử lý tệp:</item>
+    </list>
+    <list list-type="bulleted" id="id9499634">
+      <item>Filesize(bientep) cho biết số phần tử có trong tệp</item>
+      <item>FilePos(bientep) cho biết vị trí hiện thời của con trỏ tệp</item>
+      <item>Eof(Bientep) cho giá trị là True nếu con trỏ tệp ở vị trí cuối tệp, ngược lại cho giá trị False</item>
+    </list>
+    <para id="id9499665">Ví dụ 2.9: </para>
+    <para id="id9499670">Tạo một tệp lấy tên là TEPCK.DAT để vừa ghi vừa sửa dữ liệu:</para>
+    <para id="id9499677">Program Tep_co_kieu:</para>
+    <para id="id9499681">Uses crt;</para>
+    <para id="id9499686">Var bt:file of byte; i:byte; n:real;</para>
+    <para id="id9499690">Begin</para>
+    <para id="id9499694">Clrscr;</para>
+    <para id="id9499698">Assign(bt,’ TEPCK.DAT’);</para>
+    <para id="id9499707">Rewrite(bt);</para>
+    <para id="id9499711">For i:=0 to 5 do write(bt,i); {ghi vào tệp 5 số nguyên}</para>
+    <para id="id9499717">Reset(bt);</para>
+    <para id="id9499722">Writeln(‘Du lieu luu tru trong tep TEPCK.DAT’);</para>
+    <para id="id9499728">While not eof(BT) do</para>
+    <para id="id9499732">Begin</para>
+    <para id="id9499736">Read(bt,i); write(i:5);</para>
+    <para id="id9499740">End;</para>
+    <para id="id9499745">Writeln;</para>
+    <para id="id9499749">Seek(bt,3); {định vị con trỏ tại phần tử thứ 4}</para>
+    <para id="id9499755">Textcolor(magenta);</para>
+    <para id="id9499760">Read(bt,i);</para>
+    <para id="id9499764">Writeln (‘So trong tep o vi trí thu 4:’,i);</para>
+    <para id="id9499773">i:=33;</para>
+    <para id="id9499777">seek(bt,3);</para>
+    <para id="id9499782">write(bt,i);</para>
+    <para id="id9499786">seek(bt,3); read(bt,i);</para>
+    <para id="id9499790">writeln(‘So moi trong tep o vi tri 4:,i);</para>
+    <para id="id9499799">writeln(‘vi tri hien thoi cua con tro:’, filepos(bt));</para>
+    <para id="id9499805">readln;</para>
+    <para id="id9499809">close(bt);</para>
+    <para id="id9499814">end.</para>
+    <para id="id9499818">4 Tệp không kiểu:</para>
+    <para id="id9499823"> a. Khai báo biến tệp:</para>
+    <para id="id9499830"> Var Bientep:File;</para>
+    <para id="id9733325">b. Mở tệp để ghi-đọc:</para>
+    <list list-type="bulleted" id="id9733331">
+      <item>Mở tệp mới để ghi:</item>
+    </list>
+    <para id="id9733340"> Assign(bientep, tentep);</para>
+    <para id="id9733349">Rewrite(bientep, n);</para>
+    <list list-type="bulleted" id="id9733356">
+      <item>Mở tệp để đọc dữ liệu:</item>
+    </list>
+    <para id="id9733366"> Assign(bientep, tentep);</para>
+    <para id="id9733374">Reset(bientep, n);</para>
+    <para id="id9733381">Với n là độ lớn tính theo Byte. </para>
+    <para id="id9733390">c. Đọc và ghi tệp không định kiểu:</para>
+    <para id="id9733396">* Đọc tệp không định kiểu:</para>
+    <para id="id9733404">BlockRead(bientep,biennho,i,j);</para>
+    <list list-type="bulleted" id="id9733408">
+      <item>biennho: là biến đã được khai báo cùng kiểu với các phần tử của tệp, biến nhớ đóng vai trò vùng nhớ đệm để lưu trữ dữ liệu đọc từ phần tử của tệp ra.</item>
+      <item>i: là số phần tử quy định cho mỗi lần đọc.</item>
+      <item>j: là biến kiểu Word, dùng để ghi lại số phần tử thực sự đã được đọc.</item>
+    </list>
+    <para id="id9733440">* Ghi tệp không định kiểu:</para>
+    <para id="id9733445">BlockWrite(bientep,biennho,i);</para>
+    <list list-type="enumerated" id="id9733453">
+      <item>Truy nhập tệp không định kiểu:</item>
+    </list>
+    <para id="id9733465">Tệp không kiểu cũng được truy nhập như tệp có kiểu nghĩa là cũng dùng thủ tục Seek(bientep,n) để truy nhập vào phần tử thứ n+1 của tệp.</para>
+    <para id="id9733478">Lưu ý là với tệp không kiểu, mỗi lần con trỏ dịch chuyển nó sẽ dịch chuyển một số byte đúng bằng số byte đã quy định trong lệnh Rewrite() hoặc Reset()</para>
+    <para id="id9733489">Ví dụ 2.10</para>
+    <para id="id9733494">Nhập vào tệp các phần tử là record và sau đó viết chúng ra màn hình. Trong phần khai báo record chọn Hoten là string[15] và Diem thuộc kiểu Real.</para>
+    <para id="id9733504">Program tep_khong_kieu;</para>
+    <para id="id9733508">Uses Crt;</para>
+    <para id="id9733512">Type hs=record</para>
+    <para id="id9733516"> Hoten:string[15];</para>
+    <para id="id9733522"> Diem:real;</para>
+    <para id="id9733527"> End;</para>
+    <para id="id9733532">Var</para>
+    <para id="id9733537"> bt:file; k,nguoi:hs; i,j:byte;</para>
+    <figure id="id9733548">
+      <media id="idm4888064" alt=""><image src="../../media/graphics1.png" mime-type="image/png" height="567" width="363"/></media>
+    </figure>
+    <para id="id9733572">  Close(bt);</para>
+    <para id="id9733585">  Readln;</para>
+    <para id="id9733594">  End. </para>
+  </content>
+</document>

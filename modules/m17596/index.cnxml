@@ -1,0 +1,317 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Xâu ký tự</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>c34025b1-b76f-4c0c-a23a-2bdba3713017</md:uuid>
+</metadata>
+  <content>
+    <para id="id5673148">XÂU KÝ TỰ (STRING)</para>
+    <para id="id2820083"> </para>
+    <para id="id7591759"> </para>
+    <para id="id7140808">I. KHAI BÁO KIỂU STRING</para>
+    <para id="id8464142">     TYPE    TênKiểu = STRING[Max];</para>
+    <para id="id8402105">     VAR      Tên biến : TênKiểu;</para>
+    <para id="id7546220">hoặc khai báo biến trực tiếp:</para>
+    <para id="id8538391">     VAR      Tên biến : STRING[Max];</para>
+    <para id="id8538627">Trong đó Max là số ký tự tối đa có thể chứa trong chuỗi (Max Î [0,255]). Nếu không có khai báo [Max] thì số ký tự mặ mặc định trong chuỗi là 255.</para>
+    <para id="id7591765">Ví dụ:</para>
+    <para id="id7633365">     Type      Hoten  = String[30]; </para>
+    <para id="id7658642">                   St80 = String[80];</para>
+    <para id="id7658607">     Var        Name : Hoten;</para>
+    <para id="id8013331">                   Line : St80;</para>
+    <para id="id8387828">                   St : String; {St có tối đa là 255 ký tự}</para>
+    <para id="id8463245"> </para>
+    <para id="id7644090">II. TRUY XUẤT DỮ LIỆU KIỂU STRING</para>
+    <para id="id7182370">     - Có thể sử dụng các thủ tục xuất nhập Write, Writeln, Readln để truy xuất các biến kiểu String. </para>
+    <para id="id8162819">     - Để truy xuất đến ký tự thứ k của xâu ký tự, ta sử dụng cú pháp sau: Tênbiến[k].</para>
+    <para id="id6830129"> </para>
+    <para id="id8539652">III. CÁC PHÉP TOÁN TRÊN XÂU KÝ TỰ</para>
+    <para id="id7632333">3.1. Phép nối xâu: +</para>
+    <para id="id7593150">3.2. Các phép toán quan hệ: =, &lt;&gt;, &lt;, &lt;=, &gt;, &gt;=.</para>
+    <para id="id8161807">Chú ý: Các phép toán quan hệ được so sánh theo thứ tự từ điển.</para>
+    <para id="id6591048"> </para>
+    <para id="id7647489">IV. CÁC THỦ TỤC VÀ HÀM VẾ XÂU KÝ TỰ</para>
+    <para id="id8162178">4.1. Hàm lấy chiều dài của xây ký tự</para>
+    <para id="id7008930">          LENGTH(St : String):Integer;</para>
+    <para id="id6609613">4.2. Hàm COPY(St : String; Pos, Num: Byte): String;</para>
+    <para id="id7487463">Lấy ra một xâu con từ trong xâu St có độ dài Num ký tự bắt đầu từ vị trí Pos .</para>
+    <para id="id7387034">4.3. Hàm POS(SubSt, St :String):Byte;</para>
+    <para id="id7483962">Kiểm tra xâu con SubSt có nằm trong xâu St hay không? Nếu xâu SubSt nằm trong xâu St thì hàm trả về vị trí đầu tiên của xâu con SubSt trong xâu St, ngược lại hàm trả về giá trị 0.</para>
+    <para id="id6000060">4.4. Thủ tục DELETE(Var St:String; Pos, Num: Byte);</para>
+    <para id="id8496684">Xoá trong xâu St Num ký tự bắt đầu từ vị trí Pos.</para>
+    <para id="id7298425">4.5.  Thủ tục INSERT(SubSt: String; Var St: String; Pos: Byte);</para>
+    <para id="id8467930">Chèn xâu SubSt vào xâu St bắt đầu tại vị trí Pos.</para>
+    <para id="id7151328">4.6. Thủ tục STR(Num; Var St:String);</para>
+    <para id="id7555397">Đổi số nguyên hay thực Num thành dạng xâu ký tự, kết quả lưu vào biến St.</para>
+    <para id="id6912437">4.7. Thủ tục VAL(St:String; Var Num; Var Code:Integer);</para>
+    <para id="id7351533">Đổi xâu số St thành số và gán kết quả lưu vào biến Num. Nếu việc chuyển đổi thành công thì biến Code có giá trị là 0, ngược lại biến Code có giá trị khác 0 (vị trí của lỗi).</para>
+    <para id="id7351536"> </para>
+    <para id="id6870172">BÀI TẬP MẪU</para>
+    <para id="id7488050"> </para>
+    <para id="id7647011">Bài tập 1: Viết chương trình nhập vào một xâu ký tự từ bàn phím. Đổi xâu ký tự đó sang chữ in hoa rồi in kết quả ra màn hình.</para>
+    <para id="id8147837">     Ví dụ :Xâu abcdAbcD sẽ cho ra xâu ABCDABCD.</para>
+    <para id="id4883868"> </para>
+    <para id="id7554548">Uses Crt;</para>
+    <para id="id7557425">Var  St:String;</para>
+    <para id="id6016606">        i:Byte;</para>
+    <para id="id2584456">Begin</para>
+    <para id="id7637863">    Write(‘Nhap xau St: ‘); Readln(St);</para>
+    <para id="id8691196">    For i:=1 to length(St) do St[i]:=Upcase(St[i]);</para>
+    <para id="id7601100">    Write(‘Xau ket qua: ‘, St); </para>
+    <para id="id3198353">    Readln;</para>
+    <para id="id8462262">End.</para>
+    <para id="id8482024"> </para>
+    <para id="id7174102">Bài tập 2: Viết chương trình nhập vào một xâu ký tự từ bàn phím. Đổi xâu ký tự đó sang chữ thường rồi in kết quả ra màn hình.</para>
+    <para id="id7487483">     Ví dụ :Xâu abCdAbcD sẽ cho ra xâu abcdabcd.</para>
+    <para id="id8164815"> </para>
+    <para id="id8537579">Uses Crt;</para>
+    <para id="id8537137">Var  St:String;</para>
+    <para id="id8161340">        i:Byte;</para>
+    <para id="id7481178">Begin</para>
+    <para id="id7636062">    Write(‘Nhap xau St: ‘); Readln(St);</para>
+    <para id="id7167553">    For i:=1 to length(St) do </para>
+    <para id="id7167556">        If St[i] IN [‘A’..’Z’] Then St[i]:=CHR(ORD(St[i])+32);</para>
+    <para id="id8164228">    Write(‘Xau ket qua: ‘, St); </para>
+    <para id="id7556529">    Readln;</para>
+    <para id="id8166071">End.</para>
+    <para id="id7583587"> </para>
+    <para id="id7635714">Bài tập 3: Viết chương trình đếm số ký tự chữ số trong một xâu ký tự được nhập vào từ bàn phím.</para>
+    <para id="id7586522"> </para>
+    <para id="id8690895">Uses Crt;</para>
+    <para id="id7591905">Var  St:String;</para>
+    <para id="id6698605">        i,d:Byte;</para>
+    <para id="id7007512">Begin</para>
+    <para id="id2854119">    Write(‘Nhap xau St: ‘); Readln(St);</para>
+    <para id="id7186656">    For i:=1 to length(St) do </para>
+    <para id="id7186659">        If St[i] IN [‘0’..’9’] Then d:=d+1;</para>
+    <para id="id8074776">    Write(‘So ky tu chu so trong xau: ‘, d); </para>
+    <para id="id6730912">    Readln;</para>
+    <para id="id8124189">End.</para>
+    <para id="id7998512"> </para>
+    <para id="id7168886">Bài tập 4: Viết chương trình nhập một xâu từ bàn phím. In ra xâu đó sau khi xóa hết các ký tự trắng thừa trong xâu. (Ký tự trắng thừa là các ký tự trắng đầu xâu, cuối xâu và nếu ở giữa xâu có 2 ký tự trắng liên tiếp nhau thì có 1 ký tự trắng thừa).</para>
+    <para id="id6768260"> </para>
+    <para id="id6733477">Uses Crt;</para>
+    <para id="id7139943">Var  St:String;</para>
+    <para id="id6914100">Procedure  XoaTrangThua(Var St:String);</para>
+    <para id="id7167240">Begin</para>
+    <para id="id7659475">    {Xóa các ký tự trắng ở đầu xâu}</para>
+    <para id="id7644482">    While St[1]=#32 Do Delete(St,1,1);</para>
+    <para id="id8144448">    {Xóa các ký tự trắng ở cuối xâu}</para>
+    <para id="id7454639">    While St[Length(St)]=#32 Do Delete(St,Length(St),1);</para>
+    <para id="id8387369">    {Xóa các ký tự trắng ở giữa xâu}</para>
+    <para id="id7602855">    While POS(#32#32,St)&lt;&gt;0 Do Delete(St,POS(#32#32,St),1);</para>
+    <para id="id6576793">End;</para>
+    <para id="id7646907"> </para>
+    <para id="id8161009">Begin</para>
+    <para id="id8161012">    Write(‘Nhap xau St: ‘); Readln(St);</para>
+    <para id="id8483826">    XoaTrangThua(St);</para>
+    <para id="id6773339">    Write(‘Xau sau khi xoa cac ky tu trang thua: ‘, St); </para>
+    <para id="id7487496">    Readln;</para>
+    <para id="id7489244">End.</para>
+    <para id="id6805092"> </para>
+    <para id="id6999712">Bài tập 5: Viết chương trình liệt kê các từ của một xâu ký tự được nhập vào từ bàn phím, mỗi từ phải được viết trên một dòng.</para>
+    <para id="id7484220"> </para>
+    <para id="id7453805">Uses Crt;</para>
+    <para id="id7581623">Var  St:String;</para>
+    <para id="id7581627">Procedure  XoaTrangThua(Var St:String);</para>
+    <para id="id7165386">Begin</para>
+    <para id="id7165390">    {Xóa các ký tự trắng ở đầu xâu}</para>
+    <para id="id8465344">    While St[1]=#32 Do Delete(St,1,1);</para>
+    <para id="id7181259">    {Xóa các ký tự trắng ở cuối xâu}</para>
+    <para id="id7107389">    While St[Length(St)]=#32 Do Delete(St,Length(St),1);</para>
+    <para id="id8165323">    {Xóa các ký tự trắng ở giữa xâu}</para>
+    <para id="id8541198">    While POS(#32#32,St)&lt;&gt;0 Do Delete(St,POS(#32#32,St),1);</para>
+    <para id="id7164765">End;</para>
+    <para id="id3715120"> </para>
+    <para id="id7494686">Begin</para>
+    <para id="id8541096">    Write(‘Nhap xau St: ‘); Readln(St);</para>
+    <para id="id6751943">    XoaTrangThua(St);</para>
+    <para id="id7179842">    St:=St+#32;</para>
+    <para id="id7165398">    Writeln(‘Liet ke cac tu trong xau: ‘); </para>
+    <para id="id5894669">    While POS(#32,St)&lt;&gt;0 Do</para>
+    <para id="id7639436">        Begin</para>
+    <para id="id8496605">           Writeln(Copy(St,1,POS(#32,St)));</para>
+    <para id="id7632003">           Delete(St,1,POS(#32,St));</para>
+    <para id="id6929911">        End;</para>
+    <para id="id6929915">    Readln;</para>
+    <para id="id6962066">End.</para>
+    <para id="id7479500"> </para>
+    <para id="id8466340">Bài tập 6: Viết chương trình nhập vào một xâu ký tự từ bàn phím. Tìm xâu đảo ngược của xâu đó rồi in kết quả ra màn hình theo 2 cách: Đệ qui và không đệ qui.</para>
+    <para id="id7336718">Ý tưởng:</para>
+    <para id="id3213275">     - Nếu xâu St có 1 ký tự thì xâu đảo = St.</para>
+    <para id="id8158207">     - Ngược lại: Xâu đảo = Ký tự cuối + Đệ qui(Phần còn lại của xâu St).</para>
+    <para id="id7594894"> </para>
+    <para id="id8481800">Uses Crt;</para>
+    <para id="id7602017">Var  St:String;</para>
+    <para id="id7170173"> </para>
+    <para id="id6802401">{Giải thuật không đệ qui}</para>
+    <para id="id6911750">Function XauDao(St:String):String;</para>
+    <para id="id6911754">Var  S:String;</para>
+    <para id="id7646249">        i:Byte;</para>
+    <para id="id8165646">Begin</para>
+    <para id="id7659688">    S:=’’;</para>
+    <para id="id7593746">    For i:=Length(St) DowTo 1 Do S:=S+St[i];</para>
+    <para id="id7181217">    XauDao:=S;</para>
+    <para id="id7181222">End;</para>
+    <para id="id8464527"> </para>
+    <para id="id7633490">{Giải thuật đệ qui}</para>
+    <para id="id7630548">Function DeQui(St:String):String;</para>
+    <para id="id7600364">Begin</para>
+    <para id="id8496477">    If Length(St)&lt;=1 Then DeQui:=St</para>
+    <para id="id8496481">    Else DeQui:=St[Length(St)] + DeQui(Copy(St,1,Length(St)-1));</para>
+    <para id="id7493927">End;</para>
+    <para id="id8161279"> </para>
+    <para id="id7494610">Begin</para>
+    <para id="id7644286">    Write(‘Nhap xau St: ‘); Readln(St);</para>
+    <para id="id7585592">    Write(‘Xau dao nguoc: ‘, XauDao(St)); </para>
+    <para id="id7174583">    Readln;</para>
+    <para id="id7647421">End.</para>
+    <para id="id7647425"> </para>
+    <para id="id8161833">Bài tập 7: Viết chương trình nhập vào một xâu ký tự từ bàn phím. Thông báo lên màn hình các chữ cái có trong xâu và số lượng của chúng ( Không phân biệt chữ hoa hay chữ thường).</para>
+    <para id="id7162003">Ý tưởng:</para>
+    <para id="id7048774">     - Dùng một mảng dem với chỉ số là các chữ cái để lưu trữ số lượng của các chữ cái trong xâu.</para>
+    <para id="id7227715">     - Duyệt qua tất cả các ký tự của xâu St: Nếu ký tự đó là chữ cái thì tăng ô biến mảng dem[St[i]] lên 1 đơn vị.</para>
+    <para id="id7586513"> </para>
+    <para id="id7586518">Uses Crt;</para>
+    <para id="id7544938">Var  St:String;</para>
+    <para id="id8482264">        dem: Array[‘A’..’Z’] Of Byte;</para>
+    <para id="id8120882">        i:Byte;</para>
+    <para id="id7599986">        ch:Char;</para>
+    <para id="id7638689">Begin</para>
+    <para id="id7638693">    Write(‘Nhap xau St: ‘); Readln(St);</para>
+    <para id="id8465461">    {Khởi tạo mảng}</para>
+    <para id="id7638800">    For ch:=’A’ To ‘Z’ Do dem[ch]:=0;</para>
+    <para id="id6773325">    {Duyệt xâu}</para>
+    <para id="id7048605">    For i:=1 To Length(St) Do</para>
+    <para id="id7657035">        If Upcase(St[i]) IN [‘A’..’Z’] Then Inc(dem[Upcase(St[i])]);</para>
+    <para id="id6912859">    {Liệt kê các ký tự ra màn hình}</para>
+    <para id="id7253185">    For ch:=’A’ To ‘Z’ Do </para>
+    <para id="id7617124">        If dem[ch]&gt;0 Then Writeln(ch,’ : ’,dem[ch]);</para>
+    <para id="id7617128">    Readln;</para>
+    <para id="id7614364">End.</para>
+    <para id="id7614369"> </para>
+    <para id="id7638828">Bài tập 8: Viết chương trình xóa các ký tự chữ số trong một xâu ký tự được nhập vào từ bàn phím.</para>
+    <para id="id8461699"> </para>
+    <para id="id7614288">Uses Crt;</para>
+    <para id="id7542926">Var  St:String;</para>
+    <para id="id7593835"> </para>
+    <para id="id7593839">{Hàm POSNUM kiểm tra xem trong xâu St có ký tự chữ số hay không? Nếu có, hàm trả về vị trí đầu tiên của ký tự chữ số, ngược lại hàm trả về giá trị 0}</para>
+    <para id="id7968380">Function POSNUM(St:String):Byte;</para>
+    <para id="id7487185">Var  OK:Boolean;</para>
+    <para id="id7600898">        i:Byte;</para>
+    <para id="id7600902">Begin</para>
+    <para id="id7542141">    OK:=False;</para>
+    <para id="id7557144">    i:=1;</para>
+    <para id="id8162100">    While (i&lt;=Length(St)) AND (Not OK) Do</para>
+    <para id="id7631364">        If St[i] IN [‘0’..’9’] Then OK:=True</para>
+    <para id="id7146289">        Else i:=i+1;</para>
+    <para id="id6900350">    If OK Then POSNUM:=i Else POSNUM:=0;</para>
+    <para id="id8131190">End;</para>
+    <para id="id8131194"> </para>
+    <para id="id6900629">Begin</para>
+    <para id="id3080475">    Write(‘Nhap xau St: ‘); Readln(St);</para>
+    <para id="id8469242">    While POSNUM(St)&lt;&gt;0 Do Delete(St,POSNUM(St),1);</para>
+    <para id="id7591678">    Write(‘Xau sau khi xoa: ‘,St); </para>
+    <para id="id7600114">    Readln;</para>
+    <para id="id7614470">End.</para>
+    <para id="id7614528"> </para>
+    <para id="id7183851">Bài tập 9: Viết chương trình để mã hoá và giải mã một xâu ký tự bằng cách đảo ngược các bit của từng ký tự trong xâu.</para>
+    <para id="id7970485"> </para>
+    <para id="id7556779">Uses crt;</para>
+    <para id="id7556784">Var st:string;</para>
+    <para id="id7471562"> </para>
+    <para id="id6733343">{Hàm đảo bit ký tự c}</para>
+    <para id="id8608232">Function DaoBit(c:char):char;</para>
+    <para id="id7647511">Var n,i,s,bitcuoi,Mask:byte;</para>
+    <para id="id8481651">Begin</para>
+    <para id="id8481655"> {Đổi ký tự sang số}</para>
+    <para id="id7659814">  n:=ORD(c);</para>
+    <para id="id7658455"> {s: kết quả đảo bit, Mask: mặt nạ dùng để bật bit thứ i}</para>
+    <para id="id8162894">  s:=0;</para>
+    <para id="id8462612">  Mask:=128;</para>
+    <para id="id7638734"> </para>
+    <para id="id7638738">  For i:=1 To 8 Do {duyệt qua 8 bit của n}</para>
+    <para id="id7557439">   Begin</para>
+    <para id="id8402086">     {Lấy bit cuối cùng của n: bit cực phải}</para>
+    <para id="id8106791">     bitcuoi:=n AND 1;</para>
+    <para id="id7453512">     n:=n shr 1; {loại bỏ bit cuối cùng: n:=n DIV 2}</para>
+    <para id="id7160454">     {Bật bit thứ i lên: từ trái sang phải} </para>
+    <para id="id2926310">     if bitcuoi=1 then s:=s OR Mask;</para>
+    <para id="id8608246">     Mask:=Mask shr 1; { Mask:= Mask DIV 2}</para>
+    <para id="id3053184">   End;</para>
+    <para id="id7479582"> </para>
+    <para id="id7479586">  DaoBit:=CHR(s);</para>
+    <para id="id8608528">End;</para>
+    <para id="id8469090"> </para>
+    <para id="id7555928">Function MaHoa(st:string):string;</para>
+    <para id="id7659538">Var i:Byte;</para>
+    <para id="id7659542">Begin</para>
+    <para id="id8461776"> {Đảo bit từng ký tự trong xâu st}</para>
+    <para id="id8164315">  For i:=1 To Length(st) Do st[i]:=DaoBit(st[i]);</para>
+    <para id="id7540669">  Mahoa:=st;</para>
+    <para id="id5397510">End;</para>
+    <para id="id8074523"> </para>
+    <para id="id5736957">Begin</para>
+    <para id="id5736961"> Write('Nhap xau: '); Readln(st);</para>
+    <para id="id8164543"> st:=MaHoa(st);</para>
+    <para id="id7554944"> Writeln('Xau sau khi ma hoa: ',st);</para>
+    <para id="id7161733"> Readln;</para>
+    <para id="id6911796"> st:=MaHoa(st);</para>
+    <para id="id6911800"> Writeln('Xau sau khi giai ma: ',st);</para>
+    <para id="id7658368"> Readln;</para>
+    <para id="id8164523">End.</para>
+    <para id="id8138310"> </para>
+    <para id="id4701891">Bài tập 10: Viết chương trình thực hiện phép cộng 2 số tự nhiên lớn (không quá 255 chữ số). </para>
+    <para id="id7523347"> </para>
+    <para id="id7644704">Uses crt;</para>
+    <para id="id5985602">Var so1,so2,kqua:string;</para>
+    <para id="id7496887"> </para>
+    <para id="id7595077">Procedure LamDayXau(Var st1,st2:string);</para>
+    <para id="id7595081">{Them so 0 vao truoc xau ngan}</para>
+    <para id="id8462602">var i:Byte;</para>
+    <para id="id7617656">Begin</para>
+    <para id="id5398275">  If Length(st1)&gt;Length(st2) Then</para>
+    <para id="id6029227">    For i:=1 To Length(st1)-Length(st2) Do st2:='0'+st2</para>
+    <para id="id7644831">  Else</para>
+    <para id="id7644835">    For i:=1 To Length(st2)-Length(st1) Do st1:='0'+st1;</para>
+    <para id="id7544529">End;</para>
+    <para id="id7635296"> </para>
+    <para id="id8162331">Function Cong(st1,st2:string):string;</para>
+    <para id="id3048924">Var i,a,b,c,sodu:Byte;</para>
+    <para id="id3048928">    code:integer;</para>
+    <para id="id8106838">    st,ch:string;</para>
+    <para id="id7495075">Begin</para>
+    <para id="id7140982">  st:=''; sodu:=0;</para>
+    <para id="id7140986">  LamDayXau(st1,st2);</para>
+    <para id="id7478485">  {Lấy từng số của 2 xâu: từ phải sang trái} </para>
+    <para id="id7478768">  For i:=Length(st1) DownTo 1 Do</para>
+    <para id="id6895908">   Begin</para>
+    <para id="id7601565">     {Đổi ký tự sang số nguyên}</para>
+    <para id="id2694297">     Val(st1[i],a,code);</para>
+    <para id="id7646284">     Val(st2[i],b,code);</para>
+    <para id="id7646288">     {Tính tổng của 2 số a,b vừa lấy ra cho vào biến c}</para>
+    <para id="id7632686">     c:=(a+b+sodu) MOD 10;</para>
+    <para id="id7630823">     {Lấy phần dư của tổng a+b}</para>
+    <para id="id7658617">     sodu:=(a+b+sodu) DIV 10;</para>
+    <para id="id7544418">     {Đổi số nguyên c sang xâu ký tự ch}</para>
+    <para id="id7147477">     str(c,ch);</para>
+    <para id="id6733799">     {Cộng xâu ch vào bên trái xâu kết quả st}</para>
+    <para id="id8165269">     st:=ch+st;</para>
+    <para id="id7495894">   End;</para>
+    <para id="id7472132"> </para>
+    <para id="id7472135">    {Xử lý trường hợp số dư cuối cùng &gt;0} </para>
+    <para id="id8690733">   If sodu&gt;0 Then</para>
+    <para id="id8165554">    Begin</para>
+    <para id="id7544302">     str(sodu,ch);</para>
+    <para id="id7544306">     st:=ch+st;</para>
+    <para id="id8539393">    End;</para>
+    <para id="id8401366">   Cong:=st;</para>
+    <para id="id8401370">End;</para>
+    <para id="id7009795"> </para>
+    <para id="id7490071">Begin</para>
+    <para id="id6539413">  Write('Nhap so thu nhat: '); Readln(so1);</para>
+    <para id="id6539417">  Write('Nhap so thu hai: '); Readln(so2);</para>
+    <para id="id8401500">  kqua:=Cong(so1,so2);</para>
+    <para id="id5880668">  Writeln('Tong= ',kqua);</para>
+    <para id="id5880671">  Readln;</para>
+    <para id="id7586195">End</para>
+  </content>
+</document>

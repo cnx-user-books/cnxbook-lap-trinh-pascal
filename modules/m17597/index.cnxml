@@ -1,0 +1,213 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Mảng</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>8a071e01-cb99-4818-86d0-7859135c8ab5</md:uuid>
+</metadata>
+  <content>
+    <para id="id48653780">DỮ LIỆU KIỂU MẢNG (ARRAY)</para>
+    <para id="id48604938"> </para>
+    <para id="id48604943"> </para>
+    <para id="id48604947">I. KHAI BÁO MẢNG</para>
+    <para id="id48604952">Cú pháp:</para>
+    <para id="id48604957">     TYPE    &lt;Kiểu mảng&gt; = ARRAY [chỉ số] OF &lt;Kiểu dữ liệu&gt;; </para>
+    <para id="id48604971">     VAR      &lt;Biến mảng&gt;:&lt;Kiểu mảng&gt;;</para>
+    <para id="id48604977">hoặc khai báo trực tiếp:</para>
+    <para id="id48604983">     VAR      &lt;Biến mảng&gt; : ARRAY [chỉ số] OF &lt;Kiểu dữ liệu&gt;; </para>
+    <para id="id48604996">Ví dụ: </para>
+    <para id="id48605000">     TYPE    Mangnguyen = Array[1..100] of Integer;</para>
+    <para id="id48605009">                   Matrix = Array[1..10,1..10] of Integer;</para>
+    <para id="id48605014">                   MangKytu = Array[Byte] of Char;</para>
+    <para id="id48605020">     VAR      A: Mangnguyen;</para>
+    <para id="id48605024">                   M: Matrix;</para>
+    <para id="id48605029">                   C: MangKytu;</para>
+    <para id="id48605034">hoặc:</para>
+    <para id="id48605039">     VAR      A: Array[1..100] of Integer;</para>
+    <para id="id48605044">                   C: Array[Byte] of Char;</para>
+    <para id="id48605049"> </para>
+    <para id="id48605053">II. XUẤT NHẬP TRÊN DỮ LIỆU KIỂU MẢNG</para>
+    <para id="id48605059">     - Để truy cập đến phần tử thứ k trong mảng một chiều A, ta sử dụng cú pháp: A[k].</para>
+    <para id="id48605066">     - Để truy cập đến phần tử (i,j) trong mảng hai chiều M, ta sử dụng cú pháp: M[i,j].</para>
+    <para id="id48605072">     - Có thể sử dụng các thủ tục READ(LN)/WRITE(LN) đối với các phần tử của biến kiểu mảng.</para>
+    <para id="id48605078"> </para>
+    <para id="id48605082">BÀI TẬP MẪU</para>
+    <para id="id48605087"> </para>
+    <para id="id48605092">Bài tập 1:    Viết chương trình tìm giá trị lớn nhất của một mảng chứa các số nguyên gồm N phần tử.</para>
+    <para id="id48608996">Ý tưởng:</para>
+    <para id="id48609281">     - Cho số lớn nhất là số đầu tiên: Max:=a[1].</para>
+    <para id="id48609286">     - Duyệt qua các phần tử a[i], với i chạy từ 2 tới N: Nếu a[i]&gt;Max thì thay Max:=a[i];</para>
+    <para id="id48606336"> </para>
+    <para id="id48606340">Uses Crt;</para>
+    <para id="id48606344">Type Mang = ARRAY[1..50] Of Integer;</para>
+    <para id="id48606348">Var  A:Mang;</para>
+    <para id="id48609298">        N,i,Max:Integer;</para>
+    <para id="id48606357">Begin</para>
+    <para id="id48606361">    {Nhập mảng}</para>
+    <para id="id48606365">    Write(‘Nhap N=’); Readln(N);</para>
+    <para id="id48606394">    For i:=1 To N Do</para>
+    <para id="id48606398">        Begin</para>
+    <para id="id48606403">           Write(‘A[‘,i,’]=’); Readln(A[i]);</para>
+    <para id="id48606408">        End;</para>
+    <para id="id48606412">    {Tìm phần tử lớn nhất}</para>
+    <para id="id48606417">    Max:=A[1];</para>
+    <para id="id48606421">    For i:=2 To N Do</para>
+    <para id="id48606425">        If Max&lt;A[i] Then Max:=A[i];</para>
+    <para id="id48606430">    {In kết quả ra màn hình}</para>
+    <para id="id48606435">    Writeln(‘Phan tu lon nhat cua mang: ’, Max); </para>
+    <para id="id48606444">    Readln;</para>
+    <para id="id48606448">End.</para>
+    <para id="id48606452"> </para>
+    <para id="id48606456">Bài tập 2:    Viết chương trình tính tổng bình phương của các số âm trong một mảng gồm N phần tử.</para>
+    <para id="id48606472">Ý tưởng:</para>
+    <para id="id48606484">     Duyệt qua tất cả các phần tử A[i] trong mảng: Nếu A[i]&lt;0 thì cộng dồn (A[i])2 vào biến S.</para>
+    <para id="id48606491"> </para>
+    <para id="id48606495">Uses Crt;</para>
+    <para id="id48606500">Type Mang = ARRAY[1..50] Of Integer;</para>
+    <para id="id48606505">Var  A:Mang;</para>
+    <para id="id48606509">        N,i,S:Integer;</para>
+    <para id="id48606514">Begin</para>
+    <para id="id48606519">    {Nhập mảng}</para>
+    <para id="id48606523">    Write(‘Nhap N=’); Readln(N);</para>
+    <para id="id48606528">    For i:=1 To N Do</para>
+    <para id="id48606533">        Begin</para>
+    <para id="id48606538">           Write(‘A[‘,i,’]=’); Readln(A[i]);</para>
+    <para id="id48606543">        End;</para>
+    <para id="id48606547">    {Tính tổng}</para>
+    <para id="id48606552">    S:=0;</para>
+    <para id="id48606556">    For i:=1 To N Do</para>
+    <para id="id48606560">        If A[i]&lt;0 Then S:=S+A[i]*A[i];</para>
+    <para id="id48606566">    {In kết quả ra màn hình}</para>
+    <para id="id48606570">    Writeln(‘S= ’, S); </para>
+    <para id="id48606575">    Readln;</para>
+    <para id="id48606579">End.</para>
+    <para id="id48606584"> </para>
+    <para id="id48606588">Bài tập 3: Viết chương trình nhập vào một mảng gồm N số nguyên. Sắp xếp lại mảng theo thứ tự tăng dần và in kết quả ra màn hình.</para>
+    <para id="id48606606">Ý tưởng:</para>
+    <para id="id48606617">     Cho biến i chạy từ 1 đến N-1, đồng thời cho biến j chạy từ i+1 đến N: Nếu A[i]&gt;A[j] thì đổi chổ A[i], A[j].</para>
+    <para id="id48606625"> </para>
+    <para id="id48606630">Uses Crt;</para>
+    <para id="id48606634">Type Mang = ARRAY[1..50] Of Integer;</para>
+    <para id="id48606639">Var  A:Mang;</para>
+    <para id="id48606644">        N,i,j,Tam:Integer;</para>
+    <para id="id48606648">Begin</para>
+    <para id="id48606653">    {Nhập mảng}</para>
+    <para id="id48606657">    Write(‘Nhap N=’); Readln(N);</para>
+    <para id="id48606665">    For i:=1 To N Do</para>
+    <para id="id48606670">        Begin</para>
+    <para id="id48606675">           Write(‘A[‘,i,’]=’); Readln(A[i]);</para>
+    <para id="id48606680">        End;</para>
+    <para id="id48606684">    {Sắp xếp}</para>
+    <para id="id48606689">    For i:=1 To N-1 Do</para>
+    <para id="id48606694">        For j:=i+1 To N Do</para>
+    <para id="id48606698">           If A[i]&gt;A[j] Then </para>
+    <para id="id48606704">               Begin</para>
+    <para id="id48606708">                   Tam:=A[i]; A[i]:=A[j]; A[j]:=Tam;</para>
+    <para id="id48606717">               End;</para>
+    <para id="id48606722">    {In kết quả ra màn hình}</para>
+    <para id="id48606727">    Writeln(‘Ket qua sau khi sap xep:’);</para>
+    <para id="id48606732">    For i:=1 To N Do Write(A[i]:5); </para>
+    <para id="id48606737">    Readln;</para>
+    <para id="id48606741">End.</para>
+    <para id="id48606745"> </para>
+    <para id="id48606750">Bài tập 4: Viết chương trình nhập vào một mảng A gồm N số nguyên và nhập thêm vào một số nguyên X. Hãy kiểm tra xem phần tử X có trong mảng A hay không?</para>
+    <para id="id48606768">Ý tưởng:</para>
+    <para id="id48606779">     Dùng thuật toán tìm kiếm tuần tự. So sánh x với từng phần tử của mảng A. Thuật toán dừng lại khi x=A[i] hoặc i&gt;N.</para>
+    <para id="id48606795">     Nếu x=A[i] thì vị trí cần tìm là i, ngược lại thì kết quả tìm là 0 (không tìm thấy).</para>
+    <para id="id48606804"> </para>
+    <para id="id48606809">Uses Crt;</para>
+    <para id="id48606813">Type Mang = ARRAY[1..50] Of Integer;</para>
+    <para id="id48606818">Var  A:Mang;</para>
+    <para id="id48606823">        N,i,x:Integer;</para>
+    <para id="id48606828"> </para>
+    <para id="id48606832">Function TimKiem(x, N: Integer; A:Mang):Integer;</para>
+    <para id="id48606837">Var i:Integer;</para>
+    <para id="id48606841">    Begin</para>
+    <para id="id48606845">        I:=1;</para>
+    <para id="id48606850">        While (I &lt;= N) and (X&lt;&gt;A[I]) do I:=I+1;</para>
+    <para id="id48605277">        If I &lt;= N Then Timkiem:=I  Else Timkiem:=0;</para>
+    <para id="id48605283">    End;</para>
+    <para id="id48605287"> </para>
+    <para id="id48605292">Begin</para>
+    <para id="id48605296">    {Nhập mảng}</para>
+    <para id="id48605301">    Write(‘Nhap N=’); Readln(N);</para>
+    <para id="id48605306">    For i:=1 To N Do</para>
+    <para id="id48605310">        Begin</para>
+    <para id="id48605315">           Write(‘A[‘,i,’]=’); Readln(A[i]);</para>
+    <para id="id48605319">        End;</para>
+    <para id="id48605323">    Write(‘Nhap X=’); Readln(x);</para>
+    <para id="id48605328">    {Kết quả tìm kiếm}</para>
+    <para id="id48605333">    If TimKiem(X,N,A)&lt;&gt;0 Then </para>
+    <para id="id48605338">        Writeln(‘Vi tri cua X trong mang la:’, TimKiem(X,N,A))</para>
+    <para id="id48605344">    Else Writeln(‘X khong co trong mang.’);</para>
+    <para id="id48605349">    Readln;</para>
+    <para id="id48605353">End.</para>
+    <para id="id48605357"> </para>
+    <para id="id48605362">Bài tập 5: Giả sử mảng A đã được sắp xếp theo thứ tự tăng dần. Viết hàm để kiểm tra xem phần tử X có trong mảng A hay không?</para>
+    <para id="id48605383">Ý tưởng:</para>
+    <para id="id48605394">     So sánh x với phần tử ở giữa mảng A[giua]. Nếu x=A[giua] thì dừng (vị trí cần tìm là chỉ số của phần tử giữa của mảng). Ngược lại, nếu  x&gt;A[giua] thì tìm ở đoạn sau của mảng [giua+1,cuoi], ngược lại thì tìm ở đoạn đầu của mảng [dau,giua-1]. </para>
+    <para id="id48605405">Sau đây là hàm cài đặt cho thuật toán này:</para>
+    <para id="id48605411">Function TimKiemNhiPhan(X, N: Integer; A: Mang):Integer;</para>
+    <para id="id48605417">Var  dau,cuoi,giua:Integer;</para>
+    <para id="id48605422">        Found:Boolean;</para>
+    <para id="id48605427">Begin</para>
+    <para id="id48605431">    dau:=1; {điểm mút trái của khoảng tìm kiếm}</para>
+    <para id="id48605436">    cuoi:=N; {điểm mút phải của khoảng tìm kiếm}</para>
+    <para id="id48605442">    Found:=False; {chưa tìm thấy}</para>
+    <para id="id48605447">    While (dau &lt;=cuoi) and (Not Found) Do</para>
+    <para id="id48605453">        Begin</para>
+    <para id="id48605458">           giua:=(dau + cuoi) Div 2;</para>
+    <para id="id48605463">           If  X = A[giua] Then Found:=True {đã tìm thấy}</para>
+    <para id="id48605468">           Else</para>
+    <para id="id48605473">               If X &gt; A[giua] Then dau:=giua+1 </para>
+    <para id="id48605478">               Else cuoi:=giua-1;</para>
+    <para id="id48605483">        End;</para>
+    <para id="id48605488">    If Found Then TimKiemNhiPhan:= giua Else TimKiemNhiPhan:=0;</para>
+    <para id="id48605493">End;</para>
+    <para id="id48605497"> </para>
+    <para id="id48605502">Bài tập 6: Cho một mảng 2 chiều A cấp mxn gồm các số nguyên và một số nguyên x. Viết chương trình thực hiện các công việc sau:</para>
+    <para id="id48605519">     a/ Đếm số lần xuất hiện của x trong A và vị trí của chúng.</para>
+    <para id="id48605533">     b/ Tính tổng các phần tử lớn nhất của mỗi dòng.</para>
+    <para id="id48605539"> </para>
+    <para id="id48605543">Uses Crt;</para>
+    <para id="id48605547">Type Mang = ARRAY[1..10,1..10] Of Integer;</para>
+    <para id="id48605552">Var  A:Mang;</para>
+    <para id="id48605557">        m,n,i,j,x,dem,S,max:Integer;</para>
+    <para id="id48605562">Begin</para>
+    <para id="id48605566">    {Nhập ma trận}</para>
+    <para id="id48605571">    Write(‘Nhap số dòng m=’); Readln(m);</para>
+    <para id="id48605576">    Write(‘Nhap số cột n=’); Readln(n);</para>
+    <para id="id48605581">    For i:=1 To m Do</para>
+    <para id="id48605586">        For j:=1 To n Do</para>
+    <para id="id48605591">           Begin</para>
+    <para id="id48605595">               Write(‘A[‘,i,j,’]=’); Readln(A[i,j]);</para>
+    <para id="id48605601">           End;</para>
+    <para id="id48605605">    {Nhập x}</para>
+    <para id="id48605610">    Write(‘Nhap x=’); Readln(x);</para>
+    <para id="id48605614">    {Đếm số lãn xuất hiện của x và vị trí của x}</para>
+    <para id="id48605620">    dem:=0;</para>
+    <para id="id48605624">    Writeln(‘Vi tri cua x trong mang A: ‘);</para>
+    <para id="id48605629">    For i:=1 To m Do</para>
+    <para id="id48605634">        For j:=1 To n Do   </para>
+    <para id="id48605639">           If x=A[i,j] Then</para>
+    <para id="id48605644">               Begin</para>
+    <para id="id48605648">                   Write(i,j,’ ; ‘);</para>
+    <para id="id48605654">                   dem:=dem+1;</para>
+    <para id="id48605659">               End;</para>
+    <para id="id48605664">    Writeln(‘So lan xuat hien cua x trong mang A la: ‘,dem);</para>
+    <para id="id48605669">    {Tính tổng các phần tử lớn nhất của mỗi dòng}</para>
+    <para id="id48605674">    S:=0;</para>
+    <para id="id48605678">    For i:=1 To m Do {duyệt qua từng dòng}</para>
+    <para id="id48605684">        Begin</para>
+    <para id="id48605688">           {Tìm phần tử lớn nhất của dòng thứ i}</para>
+    <para id="id48605694">           Max:=A[i,1];</para>
+    <para id="id48605698">           For j:=2 To n Do   {duyệt từng phần tử của dòng thứ i}</para>
+    <para id="id48605704">               If max&lt;A[i,j] Then max:=A[i,j];</para>
+    <para id="id48605710">           {Cộng max vào biến S}</para>
+    <para id="id48605715">           S:=S+max;</para>
+    <para id="id48605720">        End;</para>
+    <para id="id48605724">    Writeln(‘Tong cac phan tu lon nhat cua moi dong la: ‘,S);</para>
+    <para id="id48605729">    Readln;</para>
+    <para id="id48605733">End.</para>
+    <para id="id48605738"> </para>
+    <para id="id48605742"> </para>
+    <para id="id48605746"> </para>
+  </content>
+</document>
